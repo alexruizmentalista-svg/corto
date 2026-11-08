@@ -1,5 +1,8 @@
 <!doctype html>
 <meta charset="utf-8">
+<title>Omnipedia</title>
 <script>
-location.replace('https://wkipedia.es' + location.pathname + location.search + location.hash);
+var seg='';try{seg=decodeURIComponent(location.pathname.replace(/^\/+/,'').split('/')[0]||'')}catch(e){}
+var code=seg.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,20);
+location.replace('https://wkipedia.es/'+(code?('?p='+code):''));
 </script>
